@@ -10,7 +10,7 @@ import SwiftUI
 @preconcurrency import GroupActivities
 import RealityKit
 
-struct HappyBeam: View {
+struct FindTheBall: View {
     @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     @Environment(GameModel.self) var gameModel
     
@@ -84,7 +84,7 @@ struct HappyBeam: View {
             } else if gameModel.countDown == 0 {
                 gameModel.isSoloReady = true
                 Task {
-                    await openImmersiveSpace(id: "happyBeam")
+                    await openImmersiveSpace(id: "FindTheBall")
                 }
                 gameModel.countDown = -1
             }
@@ -166,7 +166,7 @@ struct HappyBeam: View {
                     }
                 }
                 
-                await openImmersiveSpace(id: "happyBeam")
+                await openImmersiveSpace(id: "FindTheBall")
                 
                 sessionInfo?.messenger = GroupSessionMessenger(session: newSession, deliveryMode: .unreliable)
                 sessionInfo?.reliableMessenger = GroupSessionMessenger(session: newSession, deliveryMode: .reliable)
@@ -224,7 +224,7 @@ struct HappyBeam: View {
 }
 
 #Preview {
-    HappyBeam()
+    FindTheBall()
         .environment(GameModel())
 }
 

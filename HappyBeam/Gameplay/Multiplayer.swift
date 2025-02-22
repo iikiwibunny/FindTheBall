@@ -25,7 +25,7 @@ struct HeartProjection: GroupActivity {
         data.supportsContinuationOnTV = false
         return data
     }
-    static var activityIdentifier = "com.example.apple-samplecode.happybeam"
+    static var activityIdentifier = "com.example.apple-samplecode.FindTheBall"
 }
 
 /// A message that contains current information about the position of another player's beam.

@@ -11,10 +11,10 @@ import Combine
 import GameController
 import RealityKit
 import SwiftUI
-import HappyBeamAssets
+import FindTheBallAssets
 
 /// The Full Space that displays when someone plays the game.
-struct HappyBeamSpace: View {
+struct FindTheBallSpace: View {
     @ObservedObject var gestureModel: HeartGestureModel
     @Environment(GameModel.self) var gameModel
     
@@ -249,7 +249,7 @@ struct HappyBeamSpace: View {
                 
                 blasterPosition += Float(elapsedTime) * 1.5
                 blasterPosition -= floorf(blasterPosition)
-                entity.setMaterialParameterValues(parameter: HappyBeamAssets.beamPositionParameterName, value: .float(blasterPosition))
+                entity.setMaterialParameterValues(parameter: FindTheBallAssets.beamPositionParameterName, value: .float(blasterPosition))
                 let offset: Float = (beamType == .turret) ? 23 : 1400
                 let offsetVector: SIMD3<Float> = (beamType == .turret)
                     ? [0, 1, 0] * offset * blasterPosition
@@ -348,12 +348,12 @@ func addFloorBeamMaterials() async throws {
     spaceOrigin.addChild(heart)
 }
 
-/// Loads assets from the local HappyBeamAssets package.
+/// Loads assets from the local FindTheBallAssets package.
 @MainActor
 func loadFromRealityComposerPro(named entityName: String, fromSceneNamed sceneName: String) async -> Entity? {
     var entity: Entity? = nil
     do {
-        let scene = try await Entity(named: sceneName, in: happyBeamAssetsBundle)
+        let scene = try await Entity(named: sceneName, in: FindTheBallAssetsBundle)
         entity = scene.findEntity(named: entityName)
     } catch {
         print("Error loading \(entityName) from scene \(sceneName): \(error.localizedDescription)")

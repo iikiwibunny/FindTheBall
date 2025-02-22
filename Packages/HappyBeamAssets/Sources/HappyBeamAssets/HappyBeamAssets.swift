@@ -7,6 +7,6 @@ Assets for the Happy Beam app.
 
 import Foundation
 
-/// Bundle for the HappyBeamAssets project
-public let happyBeamAssetsBundle = Bundle.module
+/// Bundle for the FindTheBallAssets project
+public let FindTheBallAssetsBundle = Bundle.module
 public let beamPositionParameterName = "beam_position"

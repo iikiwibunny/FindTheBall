@@ -60,9 +60,9 @@ class GameModel {
     var readyToStart = false
     
     // Music players.
-    var victoryPlayer = try! AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "happyBeamVictory", withExtension: "m4a")!)
-    var gameplayPlayer = try! AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "happyBeamGameplay", withExtension: "m4a")!)
-    var menuPlayer = try! AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "happyBeamMenu", withExtension: "m4a")!)
+    var victoryPlayer = try! AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "FindTheBallVictory", withExtension: "m4a")!)
+    var gameplayPlayer = try! AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "FindTheBallGameplay", withExtension: "m4a")!)
+    var menuPlayer = try! AVAudioPlayer(contentsOf: Bundle.main.url(forResource: "FindTheBallMenu", withExtension: "m4a")!)
     
     var isSharePlaying = false
     var isSpatial = false
